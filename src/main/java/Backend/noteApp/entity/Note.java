@@ -16,9 +16,9 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+
+    @Column(name = "user_id")
+    private Integer userId;
 
     @Column(name = "title", nullable = false, unique = true, length = 100)
     private String title;
@@ -40,6 +40,12 @@ public class Note {
     public Note() {
     }
 
+    public Note(Integer userId, String title, String content) {
+        this.userId = userId;
+        this.title = title;
+        this.content = content;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -48,13 +54,7 @@ public class Note {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public String getTitle() {
         return title;

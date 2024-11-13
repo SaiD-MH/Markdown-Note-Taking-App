@@ -40,8 +40,8 @@ public class Document {
     public Document() {
     }
 
-    public Document(Integer id, Note note, String name, String path, String type) {
-        this.id = id;
+
+    public Document(Note note, String name, String path, String type) {
         this.note = note;
         this.name = name;
         this.path = path;
